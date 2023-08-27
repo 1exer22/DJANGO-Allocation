@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<!-- Template pour la liste des tâches archivées -->
+<h2>Liste des tâches archivées</h2>
+<ul>
+     {% for tache in taches_archivees %}
+        <li>{{ tache.titre }} - <a href="{% url 'telecharger_fichier' tache.id %}">Télécharger le fichier</a></li>
+    {% empty %}
+        <li>Aucune tâche archivée disponible.</li>
+    {% endfor %}
+</ul>
